@@ -107,6 +107,10 @@ in
       systemd.user.services.steamos-manager = {
         overrideStrategy = "asDropin";
         wantedBy = [ "gamescope-session.service" ];
+
+        environment = {
+          RUST_LOG = "trace";
+        };
       };
 
       systemd.user.services.steamos-powerbuttond = {
